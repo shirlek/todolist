@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Todo</title>
+</head>
+<body>
+    <div class="main">
+    <h1>Todo list ~~</h1>
+    <div class="inner-main">
+        <div class="top-main">
+            <a href="/today"><button class="today btn">Today</button></a>
+            <a href="/office"><button class="office btn">Office</button></a>
+            <% if (data.path === "today") { %>
+
+            <form method="post" action="/today" class="task">
+                <input type="text" name="text" placeholder="Enter your task...">
+                <input type="submit" value="Add">
+            </form>
+
+            <% } else if (data.path === "office") { %>
+            <% console.log("we are at office") %>
+            <form method="post" action="/office" class="task">
+                <input type="text" name="text" placeholder="Enter your task...">
+                <input type="submit" value="Add">
+            </form>  
+
+            <% } else { %>
+
+            <% } %>
+        </div>
+
+        <div class="bottom-main">
+        <% if (data.path === "today") { %>
+                    <% if (data.info) { %>
+                        <% console.log(data.info) %>
+                        <% for (i=0; i<data.info.length; i++) { %>  
+                            <div id="a<% i %>" class="added-task">
+                                <p><%= data.info[i] %></p>
+                                <input type="checkbox">  
+                            </div>
+                        <% } %>
+                    <% } %>   
+        <% } else if (data.path === "office") { %>
+                    <% if (data.info) { %>
+                        <% console.log(data.info) %>
+                        <% for (i=0; i<data.info.length; i++) { %>  
+                            <div id="a<% i %>" class="added-task">
+                                <p class="para-text"><%= data.info[i] %></p>
+                                <input type="checkbox">  
+                            </div>
+                        <% } %>
+                    <% } %>   
+            <% } else { %>
+                <h1>Select the options above!!</h1>
+            <% } %>
+        </div>
+
+    </div>
+    </div>
+    
+    <script src="/styles/js/strike.js"></script>
+</body>
+</html>
+

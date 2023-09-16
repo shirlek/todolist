@@ -1,0 +1,116 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    height:100vh;
+    width:100%;
+    background: linear-gradient(0deg, #FFDEE9 40%, #B5FFFC 100%);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    width: 40%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner-main{
+    background-color: transparent;
+    margin:12px 0 30px 0;
+    padding: 15px 0px 15px 0px;  
+    width:100%;
+}
+
+.top-main{
+   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25); 
+   width: 100%;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr;
+   padding:10px 5px;  
+}
+
+.top-main .today{
+    grid-column: 2;
+}
+.top-main .office{
+    grid-column: 3;
+}
+.top-main .task{
+    display: flex;
+    margin-top:5px;
+    grid-column-start:1 ;
+    grid-row-start:2;
+    grid-column: span 4;
+    justify-content: space-between;
+}
+.top-main .task input[type="text"]{
+    height: 30px;
+    width: 90%;
+    outline:none;
+    border:none;
+    border-bottom:0.6px solid rgb(66, 57, 57);
+    font-size: 1.2rem;
+    background-color: transparent;
+}
+
+.top-main .task input[type="submit"]{
+    padding:4px;
+    border-radius: 24px;
+    font-size: 0.9rem;
+    background-color: white;
+    border:none;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25); ;
+}
+
+.bottom-main{
+    margin-top:30px;
+    padding:10px 5px;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25); ;   
+}
+
+
+
+.btn{
+    padding:5px 15px;
+    border-radius: 24px;
+    outline: none;
+    background-color: white;
+    text-transform: capitalize;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    border-width: 0px;
+    box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.25);
+}
+
+.added-task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:5px 0px;
+}
+
+.added-task p{
+    width:90%;
+    border:2px solid white;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.added-task input{
+    margin-right: 15px;
+    height: 1rem;
+    width: 1rem;
+}
+
+.strike {
+    text-decoration-line: line-through;
+}
